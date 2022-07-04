@@ -18,13 +18,7 @@ class ClienteControlador extends Controller
         if(!isset($clientes))
             session(['clientes' => $this->clientes]);
             echo "teste";
-            echo "teste";
-            echo "teste";
-            echo "teste";
-            echo "teste";
-            echo "teste";
-            echo "teste";
-            echo "teste";
+
 
 
 
