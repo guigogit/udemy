@@ -19,6 +19,12 @@ class ClienteControlador extends Controller
             session(['clientes' => $this->clientes]);
             echo "teste";
             echo "teste";
+            echo "teste";
+            echo "teste";
+            echo "teste";
+            echo "teste";
+            echo "teste";
+            echo "teste";
 
 
 
