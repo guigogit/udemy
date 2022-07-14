@@ -67,9 +67,6 @@ class ClienteControlador extends Controller
         $clientes[] = $dados;
         session(['clientes' => $clientes]);
         return redirect()->route('clientes.index');
-
-
-
     }
 
     /**
