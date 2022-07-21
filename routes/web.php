@@ -20,13 +20,20 @@ Route::get('/', function () {
 });
 
 
-Route::get('produtos', 'MeuControlador@produtos');
+Route::get('produtos', function () {
+    return view('outras.produtos');
+})->name('produtos');
+
+Route::get('departamentos', function () {
+    return view('outras.departamentos');
+})->name('departamentos');
+
 Route::get('nome', 'MeuControlador@getNome');
 Route::get('idade', 'MeuControlador@getIdade');
 Route::get('multiplicar/{n1}/{n2}', 'MeuControlador@multiplicar');
 
 //função usada para associar todos os metodos. (Lincar rota com controlador).
-Route::resource('clientes', 'ClienteControlador'); 
+Route::resource('clientes', 'ClienteControlador');
 
 
 //Route::get('/ola/sejabemvindo',function(){
@@ -39,8 +46,8 @@ Route::resource('clientes', 'ClienteControlador');
 //Route::get('/ola/{nome}/{sobrenome}',function($nome,$sobrenome){
 
   //  echo "Olá! Seja bem vindo,". $nome.$sobrenome. "!";
-    
-    
+
+
     //});
 
 
@@ -52,7 +59,7 @@ Route::resource('clientes', 'ClienteControlador');
     //else{
         //echo "Você não digitou nenhum nome!";
    // }
-    
+
 //});
 /*
 Route::get('/seunome/{nome?}',function($nome=null){
@@ -62,14 +69,14 @@ Route::get('/seunome/{nome?}',function($nome=null){
     else{
         return "Você não digitou nenhum nome!";
     }
-    
+
 });
 
 Route::get('/rotacomregras/{nome}/{n}', function($nome,$n){
     for($i=0;$i<$n;$i++){
         echo "Olá! Seja bem vindo, $nome! <br> ";
     }
-    
+
     })->where('nome','[A-Za-z]+')
       ->where('n','[0-9]+');
 
@@ -116,31 +123,31 @@ Route::post('/requisicoes', function (Request $request) {
 
 Route::delete('/requisicoes', function (Request $request) {
     return 'Hello DELETE';
-   
+
    });
 
 
    Route::put('/requisicoes', function (Request $request) {
     return 'Hello PUT';
-   
+
    });
 
 
 
    Route::patch('/requisicoes', function (Request $request) {
     return 'Hello PATCH';
-   
+
    });
 
    Route::options('/requisicoes', function (Request $request) {
     return 'Hello OPTIONS';
-   
+
    });
 
 
    Route::get('/requisicoes', function (Request $request) {
     return 'Hello GET';
-   
+
    });
 
    //lARAVEL TRABALHAR COM MVC (MODEL-VIEW-CONTROLLER
