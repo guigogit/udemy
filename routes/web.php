@@ -34,7 +34,10 @@ Route::get('multiplicar/{n1}/{n2}', 'MeuControlador@multiplicar');
 
 //função usada para associar todos os metodos. (Lincar rota com controlador).
 Route::resource('clientes', 'ClienteControlador');
+Route::get('opcoes/{opcao?}', function($opcao=null){
+    return view('outras.opcoes',compact(['opcao']));
 
+})->name('opcoes');
 
 //Route::get('/ola/sejabemvindo',function(){
 
